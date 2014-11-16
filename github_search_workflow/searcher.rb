@@ -5,8 +5,8 @@ module GithubSearchWorkflow
         data = JSON.parse(json)
         repos = data.map { |d| Repo.from_cache(d) }
 
-        matcher = FuzzyMatch.new(repos, read: :name)
-        matcher.find(query)
+        matcher = Amatch::LongestSubstring.new(query)
+        repos.sort_by { |r| matcher.match(r.name) }.reverse.first(6)
       end
     end
   end

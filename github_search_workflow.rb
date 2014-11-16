@@ -1,4 +1,4 @@
-require 'fuzzy_match'
+require 'amatch'
 require 'builder'
 require 'redis'
 require 'json'

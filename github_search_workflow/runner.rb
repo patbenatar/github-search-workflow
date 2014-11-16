@@ -6,11 +6,13 @@ module GithubSearchWorkflow
       if query == 'refresh!'
         refresh
       else
-        if result = searcher.perform(query)
+        if results = searcher.perform(query)
           xml.items do
-            xml.item autocomplete: result.name, arg: result.url do
-              xml.title result.name
-              xml.subtitle "Open #{result.url}"
+            results.each do |result|
+              xml.item autocomplete: result.name, arg: result.url do
+                xml.title result.name
+                xml.subtitle "Open #{result.url}"
+              end
             end
           end
         else
