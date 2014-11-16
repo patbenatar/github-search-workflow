@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require_relative 'github_search_workflow'
+
+GithubSearchWorkflow::Runner.new(ARGV[0]).call
