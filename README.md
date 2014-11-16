@@ -1,6 +1,6 @@
 # GitHub Search Workflow for Alfred
 
-Easily find and launch the repositories you work on. This workflow fuzzy
+Quickly find and launch the repositories you work on. This workflow fuzzy
 searches your repos by name. Searched repositories include both public and
 private repos for your user, as well as any organizations you belong to.
 
