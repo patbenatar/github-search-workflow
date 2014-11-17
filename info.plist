@@ -42,7 +42,7 @@
 				<key>script</key>
 				<string>./main {query}</string>
 				<key>title</key>
-				<string>github</string>
+				<string>GitHub Repository Search</string>
 				<key>type</key>
 				<integer>0</integer>
 				<key>withspace</key>
