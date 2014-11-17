@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+
+File.open('.auth_token', 'w') do |file|
+  file.truncate(0)
+  file.puts ARGV[0]
+end

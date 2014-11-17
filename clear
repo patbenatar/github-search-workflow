@@ -2,6 +2,4 @@
 
 require_relative 'github_search_workflow'
 
-Process.daemon(true)
-
-GithubSearchWorkflow::Fetcher.new.perform
+GithubSearchWorkflow::Cache.clear

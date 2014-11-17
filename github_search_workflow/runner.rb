@@ -3,21 +3,17 @@ module GithubSearchWorkflow
     def call
       xml.instruct!
 
-      if query == 'refresh!'
-        refresh
-      else
-        if results = searcher.perform(query)
-          xml.items do
-            results.each do |result|
-              xml.item autocomplete: result.name, arg: result.url do
-                xml.title result.name
-                xml.subtitle "Open #{result.url}"
-              end
+      if results = searcher.perform(query)
+        xml.items do
+          results.each do |result|
+            xml.item autocomplete: result.name, arg: result.url do
+              xml.title result.name
+              xml.subtitle "Open #{result.url}"
             end
           end
-        else
-          refresh
         end
+      else
+        refresh
       end
     end
 

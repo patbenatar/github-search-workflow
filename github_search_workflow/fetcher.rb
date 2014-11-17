@@ -2,9 +2,8 @@ module GithubSearchWorkflow
   class Fetcher
     def perform
       require 'octokit'
-      require 'netrc'
 
-      client = Octokit::Client.new(netrc: true)
+      client = Octokit::Client.new(access_token: File.read('.auth_token').strip)
 
       user_repos = paginate client.repos, client
 
