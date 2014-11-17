@@ -14,8 +14,8 @@ private repos for your user, as well as any organizations you belong to.
    
    ```
    machine api.github.com
-     login YOUR_GITHUB_USERNAME
-     password YOUR_AUTH_TOKEN
+      login YOUR_GITHUB_USERNAME
+      password YOUR_AUTH_TOKEN
    ```
 1. Make sure redis is installed and running
 
