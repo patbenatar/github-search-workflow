@@ -3,11 +3,9 @@ require 'bundler/setup'
 
 require 'amatch'
 require 'builder'
-require 'redis'
 require 'json'
 
 module GithubSearchWorkflow
-  REDIS = Redis.new
 end
 
 require_relative 'github_search_workflow/cache'

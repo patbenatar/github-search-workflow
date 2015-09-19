@@ -1,15 +1,18 @@
 module GithubSearchWorkflow
   module Cache
     def self.write(data)
-      REDIS.set 'github_search_workflow:repos', data
+      File.open('.result_cache', 'w') do |file|
+        file.truncate(0)
+        file.puts data
+      end
     end
 
     def self.read
-      REDIS.get('github_search_workflow:repos')
+      File.read('.result_cache') if File.exist?('.result_cache')
     end
 
     def self.clear
-      REDIS.del('github_search_workflow:repos')
+      File.delete('.result_cache')
     end
   end
 end

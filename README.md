@@ -8,7 +8,6 @@ private repos for your user, as well as any organizations you belong to.
 
 ## Setup
 
-1. Make sure redis is installed and running
 1. Download and install [GitHub Repository Search.alfredworkflow](https://github.com/patbenatar/github-search-workflow/blob/master/GitHub Repository Search.alfredworkflow?raw=true)
 1. [Create a GitHub auth token](https://help.github.com/articles/creating-an-access-token-for-command-line-use/)
 1. Add your token to the workflow: `gh-auth TOKEN`
