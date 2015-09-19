@@ -12,6 +12,7 @@ module GithubSearchWorkflow
         .map { |o| paginate(client.get(o.rels[:repos].href), client) }.flatten
 
       repos = (user_repos + org_repos).map { |r| Repo.from_github(r) }
+      repos.uniq!(&:url)
 
       Cache.write(repos.map(&:to_cache).to_json)
     end
