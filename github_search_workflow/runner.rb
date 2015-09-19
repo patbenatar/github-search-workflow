@@ -30,7 +30,7 @@ module GithubSearchWorkflow
         end
       end
 
-      exec File.join(File.dirname(__FILE__), '..', 'fetch')
+      exec Shellwords.shellescape(File.join(File.dirname(__FILE__), '..', 'fetch'))
     end
 
     def searcher

@@ -4,6 +4,7 @@ require 'bundler/setup'
 require 'amatch'
 require 'builder'
 require 'json'
+require 'shellwords'
 
 module GithubSearchWorkflow
 end
