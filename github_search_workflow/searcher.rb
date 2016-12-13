@@ -5,8 +5,8 @@ module GithubSearchWorkflow
         data = JSON.parse(json)
         repos = data.map { |d| Repo.from_cache(d) }
 
-        matcher = Amatch::LongestSubstring.new(query)
-        repos.sort_by { |r| matcher.match(r.name) }.reverse.first(6)
+        query_regexp = Regexp.new(query, 'i')
+        results = repos.select { |r| r.name =~ query_regexp }
       end
     end
   end

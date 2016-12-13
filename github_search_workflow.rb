@@ -1,7 +1,6 @@
 require 'rubygems'
 require 'bundler/setup'
 
-require 'amatch'
 require 'builder'
 require 'json'
 require 'shellwords'
